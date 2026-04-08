@@ -26,8 +26,9 @@ body {
 header {
     background: var(--white);
     padding: 20px 0;
-    box-shadow: none; /* Poistetaan varjo, jos ei tarvita */
-    position: static; /* Poistetaan sticky-ominaisuus */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -143,15 +144,15 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .contact-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
-    background: #e65c00;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: #124712;
 }
-
+/*#228B22 */
 .button {
     display: inline-block;
     color: var(--primary-color);
@@ -185,17 +186,12 @@ h1 {
     h1 { font-size: 2.2rem; }
     
     nav {
-        flex-direction: row; /* Pidetään navigointipalkki vaakasuunnassa */
-        justify-content: space-between; /* Jakaa tilan tasaisesti */
+        flex-direction: column;
+        gap: 20px;
     }
     
-    nav ul {
-        flex-direction: column; /* Linkit pystysuunnassa */
-        gap: 10px; /* Lisää tilaa linkkien väliin */
-    }
-    
-    .logo {
-        font-size: 1.2rem; /* Pienempi fonttikoko mobiilissa */
+    .feature-list li {
+        text-align: left;
     }
 }
 
