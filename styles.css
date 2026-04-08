@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #228B22; /* Darker green */
+    --dark-color: #2d3436;
+    --light-bg: #e0e0e0; /* Slightly darker gray */
+    --text-color: #444;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Nav */
+header {
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: none; /* Poistetaan varjo, jos ei tarvita */
+    position: static; /* Poistetaan sticky-ominaisuus */
+    z-index: 1000;
+}
+
+nav {
+    height: 50px; /* Further reduced navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color); /* Changed to orange */
+}
+
+.navbar-logo {
+    max-height: 30px; /* Further reduced logo height */
+    width: auto; /* Skaalautuu suhteessa korkeuteen */
+    background-color: white; /* Valkoinen tausta logolle */
+    padding: 10px; /* Lisää tyhjää tilaa logon ympärille */
+    box-sizing: border-box; /* Sisällytetään padding logon kokoon */
+    border-radius: 5px; /* Pyöristetyt kulmat */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.nav-contact {
+    background: var(--primary-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff 0%, #f4f4f4 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.lead {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Listaus */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.feature-list li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Button */
+.contact-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+    background: #e65c00;
+}
+
+.button {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    background: none;
+    border: 2px solid var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Image */
+.hero-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Mobiili */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    h1 { font-size: 2.2rem; }
+    
+    nav {
+        flex-direction: row; /* Pidetään navigointipalkki vaakasuunnassa */
+        justify-content: space-between; /* Jakaa tilan tasaisesti */
+    }
+    
+    nav ul {
+        flex-direction: column; /* Linkit pystysuunnassa */
+        gap: 10px; /* Lisää tilaa linkkien väliin */
+    }
+    
+    .logo {
+        font-size: 1.2rem; /* Pienempi fonttikoko mobiilissa */
+    }
+}
+
+/* Estetään navbaarin korkeuden kasvu */
+nav.container {
+    display: flex;
+    align-items: center; /* Kohdistetaan sisältö pystysuunnassa keskelle */
+    height: 80px; /* Kiinteä korkeus navbaarille */
+}
